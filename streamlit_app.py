@@ -90,58 +90,58 @@ expander.write("Anne is your AI teacher who is here to help you with your daily 
 #SUMMARIZE
 ##########
 
-if nav == 'Summarize text':
-    st.markdown("<h3 style='text-align: left; color:#F63366;'><b>Summarize Text<b></h3>", unsafe_allow_html=True)
-    st.text('')
+# if nav == 'Summarize text':
+#     st.markdown("<h3 style='text-align: left; color:#F63366;'><b>Summarize Text<b></h3>", unsafe_allow_html=True)
+#     st.text('')
     
-    input_su = st.text_area("Write some text or copy & paste so we can summarize it (minimum = 1000 characters)", max_chars=5000)
+#     input_su = st.text_area("Write some text or copy & paste so we can summarize it (minimum = 1000 characters)", max_chars=5000)
 
-    if st.button('Summarize'):
-        if input_su =='':
-            st.error('Please enter some text')
-        elif len(input_su) < 1000:
-            st.error('Please enter a larger text')
-        else:
-            with st.spinner('Wait for it...'):
-                st.success(summarize(input_su, word_count=50, ratio=0.05))
+#     if st.button('Summarize'):
+#         if input_su =='':
+#             st.error('Please enter some text')
+#         elif len(input_su) < 1000:
+#             st.error('Please enter a larger text')
+#         else:
+#             with st.spinner('Wait for it...'):
+#                 st.success(summarize(input_su, word_count=50, ratio=0.05))
 
-    st.markdown('___')
+#     st.markdown('___')
 
-    components.html(
-                        """
-                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Meet ANNA, your AI homework buddy @PraneshRatn" data-url="https://rajratnpranesh.github.io/" data-hashtags="AI,Education,MachineLearning,Anna" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                        """,
-                        )
+#     components.html(
+#                         """
+#                         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Meet ANNA, your AI homework buddy @PraneshRatn" data-url="https://rajratnpranesh.github.io/" data-hashtags="AI,Education,MachineLearning,Anna" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+#                         """,
+#                         )
 
 #-----------------------------------------
 
 #PARAPHRASE
 ###########
 
-if nav == 'Paraphrase text':
-    st.markdown("<h3 style='text-align: left; color:#F63366;'><b>Paraphrase Text<b></h3>", unsafe_allow_html=True)
-    st.text('')
+# if nav == 'Paraphrase text':
+#     st.markdown("<h3 style='text-align: left; color:#F63366;'><b>Paraphrase Text<b></h3>", unsafe_allow_html=True)
+#     st.text('')
     
-    input_pa = st.text_area("Write some text or copy & paste so we can paraphrase it", max_chars=5000)
+#     input_pa = st.text_area("Write some text or copy & paste so we can paraphrase it", max_chars=5000)
 
-    if st.button('Paraphrase'):
-        if input_pa =='':
-            st.error('Please enter some text')
-        else:
-            with st.spinner('Wait for it...'):
-                translator = Translator()
-                mid = translator.translate(input_pa, dest="fr").text
-                mid2 = translator.translate(mid, dest="de").text
-                back = translator.translate(mid2, dest="en").text
-                st.write(back)
+#     if st.button('Paraphrase'):
+#         if input_pa =='':
+#             st.error('Please enter some text')
+#         else:
+#             with st.spinner('Wait for it...'):
+#                 translator = Translator()
+#                 mid = translator.translate(input_pa, dest="fr").text
+#                 mid2 = translator.translate(mid, dest="de").text
+#                 back = translator.translate(mid2, dest="en").text
+#                 st.write(back)
 
-    st.markdown('___')
+#     st.markdown('___')
 
-    components.html(
-                        """
-                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Meet ANNA, your AI homework buddy @PraneshRatn" data-url="https://rajratnpranesh.github.io/" data-hashtags="AI,Education,MachineLearning,Anna" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                        """,
-                        )
+#     components.html(
+#                         """
+#                         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Meet ANNA, your AI homework buddy @PraneshRatn" data-url="https://rajratnpranesh.github.io/" data-hashtags="AI,Education,MachineLearning,Anna" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+#                         """,
+#                         )
 
 #-----------------------------------------
    
